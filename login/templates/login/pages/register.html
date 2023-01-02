@@ -1,0 +1,23 @@
+{% extends 'login/pages/home.html' %}
+
+{% block title %}Cadastro{% endblock title %}
+{% block buttons %}
+    <div class="back">
+        <h1><a href="{% url 'system:index' %}">↩</a></h1><p>Back</p>
+    </div>
+{% endblock buttons %}
+{% block form %}
+    <label for="username">Username</label>
+    <input type="text" name='username' placeholder='username'>
+
+    <label for="email">E-mail</label>
+    <input type="email" name='email' placeholder='email'>
+
+    <label for="password">Password</label>
+    <input type="password" name='password' placeholder='password'>
+
+    <label for="re_password">Your password again</label>
+    <input type="password" name='re_password' placeholder='Type your password again'>
+    <button id = "btn" class="btn" type="submit">Save</button>
+
+{% endblock form %}

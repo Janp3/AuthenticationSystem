@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    {% block buttons %}
+        <main class="main-container">
+        
+            {% if request.user.is_authenticated %}
+                <div class="logout">
+                    <h3><a href="{% url 'system:logout' %}">Logout</a></h3>
+                </div>   
+            {% endif %}
+    {% endblock buttons %}
+        <div class="container-options">
+            <div class="options">
+                <h2><a href="{% url 'system:login' %}">Login</a></h2>
+                <h2><a href="{% url 'system:register' %}">Register</a></h2>
+                <h2><a href="{% url 'system:home' %}">Home</a></h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

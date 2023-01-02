@@ -1,0 +1,25 @@
+{% extends 'login/pages/home.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block buttons %}
+        <div class="back">
+            <h1><a href=" {% url 'system:index' %} ">↩</a></h1>
+        </div>
+{% endblock buttons %}
+{% block form %}
+<label for="username">Username</label>
+<input type="text" name='username' placeholder='username'>
+
+<label for="password">Password</label>
+<input type="password" name='password' placeholder='password'>
+<button id = "btn" class="btn" type="submit">Login</button>
+
+{% endblock form %}
+{% block auxiliar %}
+        <div class="auxiliar-login">
+            <a href="{% url 'system:register' %}">
+                <p>Create account</p>
+            </a>
+        </div> 
+{% endblock auxiliar %}
